@@ -1,8 +1,6 @@
 from django.urls import path
-from .views import *
+from .views import CombinedRandomSongView
 
 urlpatterns = [
-    path('youtube/', YouTubeSearchView.as_view()),
-    path('metadata/', DiscogsMetadataView.as_view()),
-    path('enriched-metadata/', EnrichedMetadataView.as_view()),
+    path('combined-random-song/', CombinedRandomSongView.as_view()),
 ]
