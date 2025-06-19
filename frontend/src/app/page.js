@@ -1,22 +1,26 @@
 "use client";
 
 import { useState } from "react";
-import TopBar from "../components/TopBar";
 import VideoPlayer from "../components/VideoPlayer";
 import Toolbar from "../components/ToolBar";
-import CommentSection from "../components/CommentSection";
+import MinecraftBackground from "@/components/MinecraftVinylBackground";
 
 export default function HomePage() {
   const [videoId, setVideoId] = useState("HttF5HVYtlQ"); // sample video
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white font-sans">
-      <TopBar />
-      <main className="flex flex-col items-center justify-start px-4 py-6">
+    <>
+      <MinecraftBackground />
+      <div className="min-h-screen bg-transparent text-white flex flex-col justify-center items-center px-4">
         <VideoPlayer videoId={videoId} />
-        <Toolbar onShuffle={() => console.log("Shuffle")} />
-        <CommentSection />
-      </main>
-    </div>
+        <div className="flex items-center justify-start mt-4 w-full max-w-3xl">
+          <p className="text-sm text-gray-400 mr-auto">
+            DigiCrate by{" "}
+            <span className="text-white font-medium">Cycles Studios</span>
+          </p>
+          <Toolbar onShuffle={() => console.log("Shuffle")} />
+        </div>
+      </div>
+    </>
   );
 }
