@@ -16,7 +16,7 @@ GENRES = [
     "Non-Music",
     "Children's",
     "Brass & Military"
-]
+];
 
 # A list of styles common to many genres.
 # Note: Styles on Discogs vary by genre, but here is a broad compilation.

@@ -42,9 +42,11 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'api',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -131,3 +133,8 @@ YOUTUBE_API_KEY = config("YOUTUBE_API_KEY")
 DISCOGS_USER_AGENT = config("DISCOGS_USER_AGENT")
 DISCOGS_API_KEY = config("DISCOGS_API_KEY")
 DISCOGS_API_SECRET = config("DISCOGS_API_SECRET")
+
+CORS_ALLOW_ALL_ORIGINS = False
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]
